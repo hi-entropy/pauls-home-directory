@@ -50,12 +50,6 @@
 (require 'ess-site)
 (ess-toggle-underscore nil)
 
-;; ------- PYTHON --------
-;; python
-(add-to-list 'load-path "~/.emacs.d/python-mode") 
-(require 'python-mode)
-(setq py-load-pymacs-p t)
-
 ;; knewton stuff
 (require 'column-marker)
 (add-hook 'python-mode-hook (lambda () (interactive) (column-marker-1 80) (setq indent-tabs-mode 0)))
