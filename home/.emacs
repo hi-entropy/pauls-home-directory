@@ -60,6 +60,7 @@
 (add-to-list 'load-path "~/.emacs.d/color-theme") 
 (require 'color-theme)
 (color-theme-initialize)
+(setq custom-theme-load-path "~/.emacs.d")
 (load "~/.emacs.d/cyberpunk-theme.el")
 
 ;; rainbow delimiters
