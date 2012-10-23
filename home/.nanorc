@@ -1,0 +1,11 @@
+set autoindent
+set fill -8
+set historylog
+set multibuffer
+set noconvert
+set nohelp
+set nonewlines
+set nowrap
+set smarthome
+set smooth
+set tabsize 4
