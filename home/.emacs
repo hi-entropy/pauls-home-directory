@@ -72,6 +72,7 @@
 (setq show-paren-delay 0)
 
 ;; ======================= EDITING ===========================
+(add-to-list 'load-path "~/.emacs.d/iedit") 
 (require 'iedit)
 (define-key global-map (kbd "C-;") 'iedit-mode)
 (define-key isearch-mode-map (kbd "C-;") 'iedit-mode)
