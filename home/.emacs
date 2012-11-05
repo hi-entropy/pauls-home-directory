@@ -52,7 +52,13 @@
 
 ;; knewton stuff
 (require 'column-marker)
-(add-hook 'python-mode-hook (lambda () (interactive) (column-marker-1 80) (setq indent-tabs-mode 0)))
+(if (getenv "KNEWTON")
+    (progn
+      (message "using knewton mode")
+      (add-hook 'python-mode-hook (lambda () (interactive) (column-marker-1 80) (setq indent-tabs-mode 0)))
+      )
+  (message "non-knewton mode")
+  )
 
 
 ;; ===================== DISPLAY-RELATED ===========================
