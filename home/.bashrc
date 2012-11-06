@@ -10,6 +10,8 @@ alias l.='ls ..'
 alias la='ls -a'
 alias ll='ls -la'
 
+alias prettyjson='python -c "import sys, json; print json.dumps(json.load(sys.stdin), sort_keys=True, indent=4)"'
+
 . /usr/local/bin/z.sh
 
 export HISTSIZE=10000
