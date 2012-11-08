@@ -6,9 +6,12 @@ alias mv='mv -i'
 alias mkdir='mkdir -p'
 
 alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+
 alias l.='ls ..'
 alias la='ls -a'
-alias ll='ls -la'
+alias ll='ls -lah'
 
 alias prettyjson='python -c "import sys, json; print json.dumps(json.load(sys.stdin), sort_keys=True, indent=4)"'
 
