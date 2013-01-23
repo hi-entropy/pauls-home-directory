@@ -239,6 +239,11 @@
 
    `(window-number-face ((,class (:background ,cyberpunk-gray-6 :foreground ,cyberpunk-blue-5))))
 
+   ;; column-marker
+   `(column-marker-1-face ((,class (:background ,cyberpunk-bg+1))))
+   `(column-marker-2-face ((,class (:background ,cyberpunk-green-2))))
+   `(column-marker-3-face ((,class (:background ,cyberpunk-red-2))))
+
    ;; diff
    `(diff-added ((,class (:foreground ,cyberpunk-green))))
    `(diff-changed ((,class (:foreground ,cyberpunk-yellow))))

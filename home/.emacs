@@ -1,5 +1,5 @@
 ;; command to automatically reload the .emacs file
-;; at the start for when stuff breaks
+;; at the start so i can still reload when other stuff breaks
 (defun reload-dotemacs-file ()
   (interactive)
   (load-file "~/.emacs"))
@@ -28,7 +28,7 @@
 (setq auto-mode-alist (cons '("\\.less$" . css-mode) auto-mode-alist))
  
 ;; load whatever packages are in myemacs.d
-(add-to-list 'load-path "~/.emacs.d/")
+(add-to-list 'load-path "~/.emacs.d")
 
 ;; stuff with columns
 (column-number-mode)
@@ -49,6 +49,25 @@
 (load "~/.emacs.d/ess/ess-autoloads.el")
 (require 'ess-site)
 (ess-toggle-underscore nil)
+
+;; -------- PYTHON --------
+(setq-default tab-width 4)
+
+(add-hook 'find-file-hook 'flymake-find-file-hook)
+(when (load "flymake" t)
+  (defun flymake-pyflakes-init ()
+    (let* ((temp-file (flymake-init-create-temp-buffer-copy
+               'flymake-create-temp-inplace))
+       (local-file (file-relative-name
+            temp-file
+            (file-name-directory buffer-file-name))))
+      (list "pycheckers --checkers=pep8,pyflakes,pylint"  (list local-file))))
+  ;; (add-to-list 'flymake-allowed-file-name-masks
+    ;;         '("\\.py\\'" flymake-pyflakes-init))
+  )
+;;(load-library "flymake-cursor")	       
+
+;;(setq python-check-command "pyflakes")
 
 ;; knewton stuff
 (require 'column-marker)
