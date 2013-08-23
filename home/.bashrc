@@ -1,4 +1,6 @@
-export PS1="\w \$ "
+# Custom bash prompt via kirsle.net/wizards/ps1.html
+export PS1="\[$(tput bold)\]\[$(tput setaf 4)\]\w \\$\[$(tput sgr0)\] "
+
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
@@ -8,6 +10,8 @@ alias mkdir='mkdir -p'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias ......='cd ../../../../..'
 
 alias l.='ls ..'
 alias la='ls -a'

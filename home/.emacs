@@ -41,8 +41,11 @@
 (global-undo-tree-mode)
 
 ;; ==================== LANGUAGE-SPECIFIC STUFF ==================
+(setq indent-tabs-mode nil)
+
 ;; --------- JS ---------
 (setq js-indent-level 2)
+(add-hook 'js-mode-hook (lambda () (interactive) (column-marker-1 80) (setq indent-tabs-mode nil)))
 
 ;; --------- R -----------
 ;; emacs speaks statistics
@@ -70,6 +73,7 @@
 ;;(setq python-check-command "pyflakes")
 
 ;; knewton stuff
+;; use tabs with python
 (require 'column-marker)
 (if (getenv "KNEWTON")
     (progn
