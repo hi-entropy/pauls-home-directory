@@ -56,18 +56,18 @@
 ;; -------- PYTHON --------
 (setq-default tab-width 4)
 
-(add-hook 'find-file-hook 'flymake-find-file-hook)
-(when (load "flymake" t)
-  (defun flymake-pyflakes-init ()
-    (let* ((temp-file (flymake-init-create-temp-buffer-copy
-               'flymake-create-temp-inplace))
-       (local-file (file-relative-name
-            temp-file
-            (file-name-directory buffer-file-name))))
-      (list "pycheckers --checkers=pep8,pyflakes,pylint"  (list local-file))))
-  ;; (add-to-list 'flymake-allowed-file-name-masks
-    ;;         '("\\.py\\'" flymake-pyflakes-init))
-  )
+;; (add-hook 'find-file-hook 'flymake-find-file-hook)
+;; (when (load "flymake" t)
+;;   (defun flymake-pyflakes-init ()
+;;     (let* ((temp-file (flymake-init-create-temp-buffer-copy
+;;                'flymake-create-temp-inplace))
+;;        (local-file (file-relative-name
+;;             temp-file
+;;             (file-name-directory buffer-file-name))))
+;;       (list "pycheckers --checkers=pep8,pyflakes,pylint"  (list local-file))))
+;;   ;; (add-to-list 'flymake-allowed-file-name-masks
+;;     ;;         '("\\.py\\'" flymake-pyflakes-init))
+;;   )
 ;;(load-library "flymake-cursor")	       
 
 ;;(setq python-check-command "pyflakes")
@@ -105,3 +105,4 @@
 (require 'iedit)
 (define-key global-map (kbd "C-;") 'iedit-mode)
 (define-key isearch-mode-map (kbd "C-;") 'iedit-mode)
+(put 'upcase-region 'disabled nil)
