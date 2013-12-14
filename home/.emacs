@@ -47,6 +47,9 @@
 (setq js-indent-level 2)
 (add-hook 'js-mode-hook (lambda () (interactive) (column-marker-1 80) (setq indent-tabs-mode nil)))
 
+;; --------- CLOJURE -----
+(load "~/.emacs.d/clojure-mode.el")
+
 ;; --------- R -----------
 ;; emacs speaks statistics
 (load "~/.emacs.d/ess/ess-autoloads.el")
