@@ -12,11 +12,12 @@
       `((".*" ,temporary-file-directory t)))
 
 (custom-set-variables
-  ;; custom-set-variables was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
- '(save-interprogram-paste-before-kill t))
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(save-interprogram-paste-before-kill t)
+ '(uniquify-buffer-name-style (quote reverse) nil (uniquify)))
 
 ;; UI tweaks
 
@@ -39,6 +40,9 @@
 ;; undo tree mode
 (require 'undo-tree)
 (global-undo-tree-mode)
+
+;; unique buffer names
+(require 'uniquify)
 
 ;; ==================== LANGUAGE-SPECIFIC STUFF ==================
 (setq indent-tabs-mode nil)
