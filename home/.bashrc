@@ -27,6 +27,9 @@ export HISTCONTROL=ignoreboth
 export VISUAL=emacs
 alias ec='/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -n $@'
 
+# alias clojure='java -cp ~/repos/clojure-1.5.1/clojure-1.5.1.jar clojure.main'
+# export CLOJURESCRIPT_HOME=~/repos/clojurescript
+
 # having /usr/local/bin first makes python happy, according to brew
 export PATH=/usr/local/bin:/bin:/usr/sbin:/sbin:/usr/bin:/usr/X11/bin:/usr/texbin:/usr/local/sbin:~/sync/bin
 
