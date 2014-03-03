@@ -26,7 +26,10 @@
 (setq mac-option-modifier 'meta)
 
 ;; custom file mappings
-(setq auto-mode-alist (cons '("\\.less$" . css-mode) auto-mode-alist))
+(setq auto-mode-alist
+      (cons '("\\.less$" . css-mode)
+            (cons '("\\.gradle$" . groovy-mode)
+                  auto-mode-alist)))
  
 ;; load whatever packages are in myemacs.d
 (add-to-list 'load-path "~/.emacs.d")
@@ -46,6 +49,9 @@
 
 ;; ==================== LANGUAGE-SPECIFIC STUFF ==================
 (setq indent-tabs-mode nil)
+
+;; --------- GROOVY ---------
+(load-file "~/.emacs.d/groovy-emacs-mode/groovy-mode.el")
 
 ;; --------- JS ---------
 (setq js-indent-level 2)
