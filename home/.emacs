@@ -57,6 +57,15 @@
 (setq js-indent-level 2)
 (add-hook 'js-mode-hook (lambda () (interactive) (column-marker-1 80) (setq indent-tabs-mode nil)))
 
+;; -------- CSS --------
+ (setq css-indent-offset 2)
+
+;; --------- HTML ---------
+(add-hook 'html-mode-hook
+		  (lambda ()
+			(setq sgml-basic-offset 2)
+            (setq indent-tabs-mode nil)))
+
 ;; --------- CLOJURE -----
 (load "~/.emacs.d/clojure-mode.el")
 
@@ -91,10 +100,9 @@
 (if (getenv "KNEWTON")
     (progn
       (message "using knewton mode")
-      (add-hook 'python-mode-hook (lambda () (interactive) (column-marker-1 80) (setq indent-tabs-mode 0)))
-      )
-  (message "non-knewton mode")
-  )
+;;      (add-hook 'python-mode-hook (lambda () (interactive) (column-marker-1 80) (setq indent-tabs-mode 0)))
+)
+  (message "non-knewton mode"))
 
 
 ;; ===================== DISPLAY-RELATED ===========================
