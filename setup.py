@@ -9,7 +9,8 @@ for f in os.listdir('home'):
     while failed:
         failed = False
         try:
-            link_from = home_directory + '/' + f
+            # copy, prepending a .
+            link_from = home_directory + '/.' + f
             link_to = pwd + '/home/' + f
             print link_from, link_to
             os.symlink(link_to, link_from)
