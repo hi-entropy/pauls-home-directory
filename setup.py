@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import os, shutil
 
 # make files in the home directory symlink to here
@@ -12,7 +13,7 @@ for f in os.listdir('home'):
             # copy, prepending a .
             link_from = home_directory + '/.' + f
             link_to = pwd + '/home/' + f
-            print link_from, link_to
+            print "linking from " + link_from + " to " + link_to + "..."
             os.symlink(link_to, link_from)
 
         except OSError as e:
