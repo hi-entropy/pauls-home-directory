@@ -21,6 +21,9 @@
 
 ;; UI tweaks
 
+;; silence the bell
+(setq visible-bell t)
+
 ;; trying to make the option key work as meta on OSX
 (set-keyboard-coding-system nil)
 (setq mac-option-modifier 'meta)
