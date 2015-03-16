@@ -8,6 +8,7 @@ TERM=xterm-256color
 export SHELL=`which zsh`                 # New shells don't open bash
 export EDITOR=emacs                      # Emacs 4 life
 export GREP_OPTIONS='--color=auto'       # Color my greps
+WORDCHARS='*?_-.[]~=&;!#$%^(){}<>' # This is used for navigating forward and backward
 
 if [ $(uname) = Linux ]; then 
     alias ls='ls --color=auto'
@@ -79,6 +80,12 @@ alias sl='sl -l'               # ... dumb
 alias termcast='telnet 213.184.131.118 37331'   # noway.ratry.ru 37331
 alias slurp='wget -r --no-parent'
 alias deflac='for file in *.flac; do $(flac -cd "$file" | lame -V 0 --vbr-new - "${file%.flac}.mp3"); done'   # convert all flacs in directory to v0
+
+# Make a pseudorandom password. Usage: pwgen {length}
+pwgen() {
+  python -c 'import random; import string; print "".join(random.choice(string.ascii_uppercase + string.ascii_lowercase + string.digits) for _ in range('$*'))'
+}
+
 # add git-number support if it exists
 which git-number &> /dev/null
 if [ $? -eq 0 ]; then
@@ -112,6 +119,7 @@ alias gd='git diff'
 alias gf='git fetch'
 alias ga='git add'
 alias gl='git log'
+git-grep-all () { git grep $1 $(git rev-list --all) }
 # }}}
 # Global shortcuts {{{
 alias -g ...='../..'             # Ease of going backward
