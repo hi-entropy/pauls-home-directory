@@ -2,7 +2,6 @@
 import os, shutil
 
 # make files in the home directory symlink to here
-home_directory = raw_input('please enter home directory path: ')
 pwd = os.getcwd()
 for f in os.listdir('home'):
     failed = True
@@ -11,7 +10,7 @@ for f in os.listdir('home'):
         failed = False
         try:
             # copy, prepending a .
-            link_from = home_directory + '/.' + f
+            link_from = os.path.expanduser("~") + '/.' + f
             link_to = pwd + '/home/' + f
             print "linking from " + link_from + " to " + link_to + "..."
             os.symlink(link_to, link_from)
