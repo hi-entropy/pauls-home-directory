@@ -1,0 +1,38 @@
+[include]
+    path = ~/.gitconfig_specific
+[alias]
+	breview = !bash -c 'git push origin HEAD:refs/for/`git rev-parse --symbolic-full-name --abbrev-ref HEAD`'
+	review = push origin HEAD:refs/for/master
+	rpull = pull --rebase
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	lispdiff = diff --color-words --word-diff-regex='\\(|\\)|[^[:space:]()]+'
+[diff]
+    tool = ediff
+    guitool = ediff
+
+[difftool]
+    prompt = false
+
+[difftool "ediff"]
+    cmd = ~/.emacs.d/ediff.sh $LOCAL $REMOTE $MERGED
+
+[merge]
+    tool = ediff
+	conflictstyle = diff3
+
+[mergetool]
+    prompt = false
+
+[mergetool "ediff"]
+    cmd = ~/.emacs.d/ediff.sh $LOCAL $REMOTE $MERGED $BASE
+    trustExitCode = true
+[core]
+	excludesfile = .gitignore_global
+	quotepath = false
+
+[color]
+    ui = auto
+[rerere]
+	enabled = true
+[push]
+	default = simple
