@@ -92,6 +92,19 @@ pwgen() {
   python -c 'import random; import string; print "".join(random.choice(string.ascii_uppercase + string.ascii_lowercase + string.digits) for _ in range('$*'))'
 }
 
+# Make up a random MAC address
+spoof-mac() {
+    openssl rand -hex 6 | sed 's/\(..\)/\1:/g; s/.$//' | xargs sudo ifconfig en0 ether
+    ifconfig
+}
+
+# Run tests on many commits
+git-check-unpushed() {
+    for COMMIT in $(git log --reverse --format=format:%H $1..HEAD); do
+        git checkout ${COMMIT} ;
+        $2 || { echo "Commit $COMMIT don't build";  break; }
+    done
+}
 # add git-number support if it exists
 which git-number &> /dev/null
 if [ $? -eq 0 ]; then
