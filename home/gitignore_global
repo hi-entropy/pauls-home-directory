@@ -37,6 +37,7 @@ Thumbs.db
 *.swp
 *~
 \#*#
+.idea/**
 
 # How to use #
 # git config --global core.excludesfile .gitignore_global
