@@ -1,0 +1,36 @@
+from os.path import basename, split
+
+# Environment variables
+$EDITOR = "vim"
+$VISUAL = $EDITOR
+$GREP_OPTIONS = '--color=auto'        # Color my greps
+$WORDCHARS = '*?_-.[]~=&;!#$%^(){}<>' # This is used for navigating forward and backward
+
+# These make Python happy, I think.
+$LC_ALL = "en_US.UTF-8"
+$LANG = "en_US.UTF-8"
+
+# Tell everyone where Java is
+$JAVA_HOME = "/System/Library/Frameworks/JavaVM.framework/Home"
+
+# Put brew python first
+$PATH=["/usr/local/bin"] + $PATH
+
+# Xonsh
+# http://nicks-liquid-soapbox.blogspot.com/2011/03/splitting-path-to-list-in-python.html
+#def split_path_all(path, maxdepth=20):
+#     ( head, tail ) = split(path)
+#     return split_path_all(head, maxdepth - 1) + [ tail ] \
+#         if maxdepth and head and head != path \
+#         else [ head or tail ]
+
+def abbreviate_path(path):
+    if '~' in path:
+        return "~/" + "." * len(split(path)[1:-1]) + basename(path)
+    return path
+    print(path)
+    return basename(path)
+
+$FORMATTER_DICT['cwd_abbr'] = lambda: abbreviate_path($FORMATTER_DICT['cwd']())
+$FORMATTER_DICT['venv'] = lambda: "({}) ".format(abbreviate_path($VIRTUAL_ENV)) if "VIRTUAL_ENV" in __xonsh_env__ else ""
+$PROMPT = ('{BOLD_GREEN}{user} {BOLD_BLUE}{cwd}{branch_color}{curr_branch}{BOLD_BLUE}{NO_COLOR} {venv}{BOLD_BLUE}{prompt_end}{NO_COLOR} ')
