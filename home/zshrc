@@ -163,3 +163,7 @@ source ~/.zshprompt
 # Stuff that's specific to one computer {{{
 source ~/.zsh_specific
 # }}}
+
+# Run the file baleeter {{{
+~/projects/baleeter/baleeter.py
+# }}}
