@@ -41,5 +41,7 @@ $FORMATTER_DICT['cwd_abbr'] = lambda: abbreviate_path($FORMATTER_DICT['cwd']())
 $FORMATTER_DICT['venv'] = lambda: "({}) ".format(basename($VIRTUAL_ENV)) if "VIRTUAL_ENV" in __xonsh_env__ else ""
 $PROMPT = ('{BOLD_GREEN}{user} {BOLD_BLUE}{cwd_abbr}{branch_color}{curr_branch}{BOLD_BLUE}{NO_COLOR} {venv}{BOLD_BLUE}{prompt_end}{NO_COLOR} ')
 
+$XONSH_SHOW_TRACEBACK = True
+
 # Run the file baleeter
 ~/projects/baleeter/baleeter.py
