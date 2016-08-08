@@ -30,7 +30,7 @@
     trustExitCode = true
 
 [core]
-	excludesfile = .gitignore_global
+	excludesfile = /Users/paul/.gitignore_global
 	quotepath = false
 
 [color]
