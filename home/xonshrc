@@ -2,7 +2,7 @@ from os.path import basename, join, split
 
 # Environment variables
 $EDITOR = "vim"
-$VISUAL = $EDITOR
+$VISUAL = "vim"
 $GREP_OPTIONS = '--color=auto'        # Color my greps
 $WORDCHARS = '*?_-.[]~=&;!#$%^(){}<>' # This is used for navigating forward and backward
 
