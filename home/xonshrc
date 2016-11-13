@@ -23,7 +23,7 @@ source-bash ~/.my_env
 $PIP_DOWNLOAD_CACHE = "~/.cache/pip"
 
 $FORMATTER_DICT['venv'] = lambda: "({}) ".format(basename($VIRTUAL_ENV)) if "VIRTUAL_ENV" in __xonsh_env__ else ""
-$PROMPT = ('{BOLD_GREEN}{user} {BOLD_BLUE}{cwd}{branch_color}{curr_branch}{BOLD_BLUE}{NO_COLOR} {venv}{BOLD_BLUE}{prompt_end}{NO_COLOR} ')
+$PROMPT = ('{BOLD_GREEN}{user} {BOLD_BLUE}{cwd} {branch_color}{curr_branch}{BOLD_BLUE}{NO_COLOR} {venv}{BOLD_BLUE}{prompt_end}{NO_COLOR} ')
 
 $XONSH_SHOW_TRACEBACK = True
 
